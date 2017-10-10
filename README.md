@@ -24,6 +24,10 @@ Control the `awsagent` service; by default, for Amazon Inspector to work correct
 
 There is also a handler, `restart awsagent`, which can be used to restart the agent.
 
+    aws_inspector_role_test_mode: no
+
+Set this to `yes` if testing or using this role outside of an EC2 instance (e.g. if testing in CI or building a server in a different cloud environment).
+
 ## Dependencies
 
 None.
