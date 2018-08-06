@@ -1,3 +1,6 @@
 ---
 - name: restart awsagent
-  service: name=awsagent state=restarted
+  service: 
+    name: awsagent 
+    state: restarted
+  when: awsagent_enabled

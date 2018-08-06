@@ -17,7 +17,6 @@ Available variables are listed below, along with default values (see `defaults/m
 
 URL from which inspector installer will be downloaded, and temporary directory where installer will be stored.
 
-    awsagent_state: started
     awsagent_enabled: yes
 
 Control the `awsagent` service; by default, for Amazon Inspector to work correctly, you must have `awsagent` running on any server you want inspected.

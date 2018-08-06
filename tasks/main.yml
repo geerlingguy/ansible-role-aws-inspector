@@ -1,18 +1,31 @@
 ---
+- name: Check if AWS Inspector already installed
+  stat:
+    path: "{{ aws_inspector_installer_dest }}"
+  register: aws_inspector_result
+
 - name: Download AWS Inspector agent installer.
   get_url:
     url: "{{ aws_inspector_url }}"
     dest: "{{ aws_inspector_installer_dest }}"
+  when: not aws_inspector_result.stat.exists
 
 - name: Ensure AWS Inspector agent is installed.
   command: bash "{{ aws_inspector_installer_dest }}"
   args:
     creates: "/etc/init.d/awsagent"
-  when: aws_inspector_role_test_mode != True
+  when: not aws_inspector_role_test_mode and not aws_inspector_result.stat.exists
 
 - name: Ensure awsagent service is running.
   service:
     name: awsagent
-    state: "{{ awsagent_state }}"
+    state: started
     enabled: yes
-  when: aws_inspector_role_test_mode != True
+  when: not aws_inspector_role_test_mode and awsagent_enabled
+
+- name: Ensure awsagent service is not running.
+  service:
+    name: awsagent
+    state: stopped
+    enabled: no
+  when: not aws_inspector_role_test_mode and not awsagent_enabled
