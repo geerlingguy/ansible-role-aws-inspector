@@ -4,7 +4,7 @@
   become: true
 
   vars:
-    aws_inspector_role_test_mode: yes
+    aws_inspector_role_test_mode: true
 
   pre_tasks:
     - name: Update apt cache.

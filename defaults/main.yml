@@ -3,6 +3,6 @@ aws_inspector_url: "https://d1wk0tztpsntt1.cloudfront.net/linux/latest/install"
 aws_inspector_installer_dest: /tmp/aws_inspector_agent_installer
 
 awsagent_state: started
-awsagent_enabled: yes
+awsagent_enabled: true
 
-aws_inspector_role_test_mode: no
+aws_inspector_role_test_mode: false

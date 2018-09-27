@@ -14,5 +14,5 @@
   service:
     name: awsagent
     state: "{{ awsagent_state }}"
-    enabled: yes
+    enabled: true
   when: aws_inspector_role_test_mode != True
