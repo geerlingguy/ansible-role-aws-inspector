@@ -8,11 +8,11 @@
   command: bash "{{ aws_inspector_installer_dest }}"
   args:
     creates: "/etc/init.d/awsagent"
-  when: aws_inspector_role_test_mode != True
+  when: not aws_inspector_role_test_mode
 
 - name: Ensure awsagent service is running.
   service:
     name: awsagent
     state: "{{ awsagent_state }}"
     enabled: true
-  when: aws_inspector_role_test_mode != True
+  when: not aws_inspector_role_test_mode
