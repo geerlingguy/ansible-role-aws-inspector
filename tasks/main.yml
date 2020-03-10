@@ -4,6 +4,16 @@
     url: "{{ aws_inspector_url }}"
     dest: "{{ aws_inspector_installer_dest }}"
 
+- name: Configure proxy if necessary
+  template:
+    src: awsagent.env.j2
+    dest: /etc/init.d/awsagent.env
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart awsagent
+  when: aws_inspector_proxy_enabled
+
 - name: Ensure AWS Inspector agent is installed.
   command: bash "{{ aws_inspector_installer_dest }}"
   args:

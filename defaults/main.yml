@@ -6,3 +6,8 @@ awsagent_state: started
 awsagent_enabled: true
 
 aws_inspector_role_test_mode: false
+
+aws_inspector_proxy_enabled: false
+aws_inspector_https_proxy: 127.0.0.1:8080
+aws_inspector_http_proxy: 127.0.0.1:8080
+aws_inspector_no_proxy: 169.254.169.254

@@ -28,6 +28,16 @@ There is also a handler, `restart awsagent`, which can be used to restart the ag
 
 Set this to `true` if testing or using this role outside of an EC2 instance (e.g. if testing in CI or building a server in a different cloud environment).
 
+There is also support for proxy configuration:
+
+    aws_inspector_proxy_enabled: false
+    aws_inspector_https_proxy: 127.0.0.1:8080
+    aws_inspector_http_proxy: 127.0.0.1:8080
+    aws_inspector_no_proxy: 169.254.169.254
+
+Set `aws_inspector_proxy_enabled` to `true` and configure the rest of `*_proxy` variables to create a `/etc/init.d/awsagent.env` file that will enable proxy support.
+
+
 ## Dependencies
 
 None.
