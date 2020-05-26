@@ -2,7 +2,8 @@
 dependencies: []
 
 galaxy_info:
-  role_name: aws-inspector
+  # See: https://github.com/ansible/galaxy/issues/2393
+  # role_name: aws-inspector
   author: geerlingguy
   description: AWS Inspector installation for Linux.
   company: "Midwestern Mac, LLC"
