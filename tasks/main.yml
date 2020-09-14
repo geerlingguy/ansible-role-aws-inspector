@@ -9,7 +9,10 @@
     path: "{{ aws_inspector_installer_dest }}"
     regexp: '^(\s+)(yum)( downgrade| install| reinstall)(.*)$'
     replace: '\1\2 --nogpgcheck\3\4'
-  when: (awsagent_disable_gpgcheck) and (ansible_os_family == 'RedHat')
+    owner: "{{ awsagent_installer_disable_owner }}"
+    group: "{{ awsagent_installer_disable_group }}"
+    mode: "{{ awsagent_installer_disable_mode }}"
+  when: (awsagent_installer_disable_gpgcheck) and (ansible_os_family == 'RedHat')
 
 - name: Configure proxy if necessary
   template:
