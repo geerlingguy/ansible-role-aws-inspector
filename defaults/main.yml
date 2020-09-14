@@ -4,6 +4,7 @@ aws_inspector_installer_dest: /tmp/aws_inspector_agent_installer
 
 awsagent_state: started
 awsagent_enabled: true
+awsagent_disable_gpgcheck: false
 
 aws_inspector_role_test_mode: false
 

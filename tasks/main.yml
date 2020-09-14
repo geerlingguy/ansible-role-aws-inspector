@@ -4,6 +4,13 @@
     url: "{{ aws_inspector_url }}"
     dest: "{{ aws_inspector_installer_dest }}"
 
+- name: Modify script to disable package manager signature check
+  replace:
+    path: "{{ aws_inspector_installer_dest }}"
+    regexp: '^(\s+)(yum)( downgrade| install| reinstall)(.*)$'
+    replace: '\1\2 --nogpgcheck\3\4'
+  when: (awsagent_disable_gpgcheck) and (ansible_os_family == 'RedHat')
+
 - name: Configure proxy if necessary
   template:
     src: awsagent.env.j2
