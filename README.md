@@ -1,6 +1,6 @@
 # Ansible Role: AWS Inspector
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-aws-inspector.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-aws-inspector)
+[![Build Status](https://travis-ci.com/geerlingguy/ansible-role-aws-inspector.svg?branch=master)](https://travis-ci.com/geerlingguy/ansible-role-aws-inspector)
 
 Installs [AWS Inspector](https://aws.amazon.com/inspector/) (awsagent) on RedHat/CentOS or Debian/Ubuntu.
 
