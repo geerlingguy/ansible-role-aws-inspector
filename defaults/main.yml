@@ -1,5 +1,5 @@
 ---
-aws_inspector_url: "https://d1wk0tztpsntt1.cloudfront.net/linux/latest/install"
+aws_inspector_url: "https://inspector-agent.amazonaws.com/linux/latest/install"
 aws_inspector_installer_dest: /tmp/aws_inspector_agent_installer
 
 awsagent_state: started
